@@ -17,11 +17,12 @@ The workflow includes:
     * Apply `OrdinalEncoder` to 22 features with custom, defined orderings.
     * Apply `OneHotEncoder` to the remaining 22 nominal features.
     * Scale all features using `StandardScaler`.
-* **Advanced Modeling: Stacking**
-    * To achieve the best predictive score, a `StackingRegressor` was implemented.
-    * Multiple base models (e.g., Ridge, Lasso, XGBoost, RandomForestRegressor) were trained.
-    * A final meta-model (e.g., a Linear Regression) was trained on the predictions of the base models to produce the final price estimate.
-* **Final Model:** The tuned Stacking Regressor was used to generate the final `submission.csv`.
+* **Model Tuning:** `GridSearchCV` was used to tune and compare four different models:
+    1.  `DecisionTreeClassifier`
+    2.  `KNeighborsClassifier`
+    3.  `RandomForestClassifier`
+    4.  `XGBClassifier`
+* **Final Model:** The tuned **XGBClassifier** was identified as the best-performing model and was used to generate the final submission file.
 
 ## How to Run
 
